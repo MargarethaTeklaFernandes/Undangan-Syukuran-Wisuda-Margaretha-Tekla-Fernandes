@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="theme-color" content="#0d0103" />
+<meta name="theme-color" content="#1a0004" />
 <meta name="description" content="Undangan Syukuran Wisuda Margaretha Tekla Fernandes, S.Kom" />
 <title>Undangan Syukuran Wisuda — Margaretha Tekla Fernandes, S.Kom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,19 +11,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --maroon: #6b0f1a;
-    --maroon-dark: #1f0308;
-    --maroon-deep: #0d0103;
-    --maroon-mid: #3a0812;
-    --gold: #d4af37;
-    --gold-bright: #f5d76e;
-    --gold-deep: #a3801e;
-    --gold-light: #f4e4a6;
-    --cream: #faf5e6;
-    --text-soft: #c9b896;
-    --text-muted: #7d6f55;
-    --glass: rgba(212,175,55,0.05);
-    --glass-border: rgba(212,175,55,0.22);
+    /* Palet Warna Mengikuti Toga: Maroon (Burgundy) & Gold */
+    --maroon: #800020;
+    --maroon-dark: #3b000a;
+    --maroon-deep: #1a0004;
+    --maroon-mid: #500014;
+    --gold: #FFD700;       /* Kuning Emas Cerah */
+    --gold-bright: #FFF59D;
+    --gold-deep: #C59B00;
+    --gold-light: #FFEAA7;
+    --cream: #FFFFFF;
+    --text-soft: #E6D3B3;
+    --text-muted: #9E8A75;
+    --glass: rgba(255,215,0,0.05);
+    --glass-border: rgba(255,215,0,0.25);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -39,6 +40,7 @@
   }
   body:not(.opened) { overflow: hidden; }
 
+  /* Efek tekstur film grain */
   body::before {
     content: '';
     position: fixed; inset: 0;
@@ -54,7 +56,7 @@
     background: linear-gradient(90deg, var(--gold-bright), var(--gold), var(--maroon));
     z-index: 9999;
     transition: width 0.08s linear;
-    box-shadow: 0 0 14px rgba(212,175,55,0.8);
+    box-shadow: 0 0 14px rgba(255,215,0,0.8);
   }
 
   .dot-nav {
@@ -68,8 +70,8 @@
   .dot-nav.show { opacity: 1; pointer-events: auto; }
   .dot-nav a {
     width: 8px; height: 8px; border-radius: 50%;
-    background: rgba(212,175,55,0.25);
-    border: 1px solid rgba(212,175,55,0.4);
+    background: rgba(255,215,0,0.25);
+    border: 1px solid rgba(255,215,0,0.4);
     transition: all 0.4s;
     position: relative;
   }
@@ -101,17 +103,17 @@
   }
   .blob-1 {
     width: 50vw; height: 50vw; max-width: 550px; max-height: 550px;
-    background: radial-gradient(circle, rgba(212,175,55,0.6), transparent 70%);
+    background: radial-gradient(circle, rgba(255,215,0,0.5), transparent 70%);
     top: -12%; left: -12%;
   }
   .blob-2 {
     width: 55vw; height: 55vw; max-width: 650px; max-height: 650px;
-    background: radial-gradient(circle, rgba(107,15,26,0.95), transparent 70%);
+    background: radial-gradient(circle, rgba(128,0,32,0.95), transparent 70%);
     bottom: -18%; right: -18%; animation-delay: -8s;
   }
   .blob-3 {
     width: 35vw; height: 35vw; max-width: 450px; max-height: 450px;
-    background: radial-gradient(circle, rgba(245,215,110,0.45), transparent 70%);
+    background: radial-gradient(circle, rgba(255,215,0,0.4), transparent 70%);
     top: 42%; left: 52%; animation-delay: -16s;
   }
   @keyframes blobFloat {
@@ -124,7 +126,7 @@
   .particle {
     position: absolute; border-radius: 50%;
     background: var(--gold);
-    box-shadow: 0 0 8px var(--gold), 0 0 18px rgba(212,175,55,0.5);
+    box-shadow: 0 0 8px var(--gold), 0 0 18px rgba(255,215,0,0.5);
     animation: floatUp linear infinite;
     opacity: 0;
   }
@@ -140,10 +142,10 @@
     display: flex; align-items: center; justify-content: center;
     padding: 28px 18px;
     background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(212,175,55,0.22), transparent 60%),
-      radial-gradient(ellipse 80% 60% at 20% 40%, rgba(107,15,26,0.8), transparent 70%),
-      radial-gradient(ellipse 80% 60% at 80% 60%, rgba(58,8,18,0.8), transparent 70%),
-      linear-gradient(180deg, #1f0308 0%, #0d0103 50%, #2a0510 100%);
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,215,0,0.18), transparent 60%),
+      radial-gradient(ellipse 80% 60% at 20% 40%, rgba(128,0,32,0.85), transparent 70%),
+      radial-gradient(ellipse 80% 60% at 80% 60%, rgba(59,0,10,0.85), transparent 70%),
+      linear-gradient(180deg, #3b000a 0%, #1a0004 50%, #500014 100%);
     transition: transform 1.4s cubic-bezier(0.77,0,0.175,1), opacity 0.9s ease;
     overflow: hidden;
   }
@@ -157,7 +159,7 @@
   .ray {
     position: absolute; top: -30%;
     width: 2px; height: 130%;
-    background: linear-gradient(180deg, rgba(245,215,110,0.5) 0%, rgba(212,175,55,0.15) 30%, transparent 70%);
+    background: linear-gradient(180deg, rgba(255,215,0,0.5) 0%, rgba(255,215,0,0.15) 30%, transparent 70%);
     transform-origin: top center;
     filter: blur(1px);
     animation: rayShift 12s ease-in-out infinite;
@@ -174,7 +176,7 @@
 
   .cover-frame {
     position: absolute; inset: 16px;
-    border: 1px solid rgba(212,175,55,0.18);
+    border: 1px solid rgba(255,215,0,0.18);
     pointer-events: none; z-index: 2;
     border-radius: 3px;
   }
@@ -233,54 +235,42 @@
     opacity: 0.6;
   }
 
+  /* PERBAIKAN FOTO: Bentuk Kubah (Arch) */
   .photo-wrapper {
     position: relative;
-    width: clamp(150px, 40vw, 190px);
-    height: clamp(150px, 40vw, 190px);
+    width: clamp(200px, 65vw, 260px); 
+    height: clamp(280px, 85vw, 360px);
     margin: 0 auto 26px;
     will-change: transform;
     animation: floatPhoto 6s ease-in-out infinite;
+    border-radius: 150px 150px 20px 20px; /* Membuat bentuk kubah */
+    padding: 5px;
+    background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  }
+  /* Sembunyikan lingkaran animasi lama agar tidak dobel */
+  .photo-wrapper::before, .photo-wrapper::after {
+    display: none;
   }
   @keyframes floatPhoto {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-8px); }
   }
-  .photo-wrapper::before {
-    content: ''; position: absolute; inset: -15px;
-    border-radius: 50%;
-    background: conic-gradient(from 0deg, transparent 0%, var(--gold) 12%, transparent 28%, var(--gold-bright) 48%, transparent 62%, var(--gold) 82%, transparent 100%);
-    animation: rotate 14s linear infinite;
-    filter: blur(1px);
-    opacity: 0.9;
-  }
-  .photo-wrapper::after {
-    content: ''; position: absolute; inset: -7px;
-    border-radius: 50%;
-    border: 1px solid rgba(212,175,55,0.5);
-    animation: ringPulse 3.5s ease-in-out infinite;
-  }
-  @keyframes rotate { to { transform: rotate(360deg); } }
-  @keyframes ringPulse {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50%      { transform: scale(1.1); opacity: 0.95; }
-  }
 
   .cover-photo {
     position: relative; z-index: 1;
     width: 100%; height: 100%;
-    border-radius: 50%; object-fit: cover;
-    border: 3px solid var(--gold);
-    box-shadow: 0 0 55px rgba(212,175,55,0.55), 0 0 110px rgba(212,175,55,0.22), inset 0 0 30px rgba(0,0,0,0.4);
-    animation: photoPulse 3.5s ease-in-out infinite, kenBurns 20s ease-in-out infinite alternate;
+    border-radius: 144px 144px 16px 16px; /* Inner arch */
+    object-fit: cover; 
+    object-position: center top;
+    background-color: #ffffff; 
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    animation: photoPulse 3.5s ease-in-out infinite;
     display: block;
   }
   @keyframes photoPulse {
-    0%, 100% { box-shadow: 0 0 55px rgba(212,175,55,0.55), 0 0 110px rgba(212,175,55,0.22), inset 0 0 30px rgba(0,0,0,0.4); }
-    50%      { box-shadow: 0 0 85px rgba(212,175,55,0.85), 0 0 170px rgba(212,175,55,0.35), inset 0 0 30px rgba(0,0,0,0.4); }
-  }
-  @keyframes kenBurns {
-    0%   { transform: scale(1); }
-    100% { transform: scale(1.06); }
+    0%, 100% { box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.4); }
+    50%      { box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 0 60px rgba(255,215,0,0.7); }
   }
 
   .cover-title {
@@ -315,10 +305,10 @@
   .guest-pill {
     display: inline-block;
     padding: 14px 28px;
-    background: rgba(212,175,55,0.08);
+    background: rgba(255,215,0,0.08);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(212,175,55,0.32);
+    border: 1px solid rgba(255,215,0,0.35);
     border-radius: 999px;
     margin-bottom: 22px;
     max-width: 100%;
@@ -343,18 +333,18 @@
     display: inline-flex; align-items: center; gap: 10px;
     padding: 15px 40px;
     background: linear-gradient(135deg, var(--gold-bright) 0%, var(--gold) 50%, var(--gold-deep) 100%);
-    color: #1a0206; border: none; border-radius: 999px;
+    color: var(--maroon-deep); border: none; border-radius: 999px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.78rem; font-weight: 600;
+    font-size: 0.78rem; font-weight: 700;
     letter-spacing: 0.22em; text-transform: uppercase;
     cursor: pointer;
-    box-shadow: 0 12px 38px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 12px 38px rgba(255,215,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6);
     transition: transform 0.3s, box-shadow 0.3s;
     animation: btnPulse 3s ease-in-out infinite;
   }
   @keyframes btnPulse {
-    0%, 100% { box-shadow: 0 12px 38px rgba(212,175,55,0.5), inset 0 1px 0 rgba(255,255,255,0.4); }
-    50%      { box-shadow: 0 12px 55px rgba(212,175,55,0.8), inset 0 1px 0 rgba(255,255,255,0.4); }
+    0%, 100% { box-shadow: 0 12px 38px rgba(255,215,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6); }
+    50%      { box-shadow: 0 12px 55px rgba(255,215,0,0.8), inset 0 1px 0 rgba(255,255,255,0.6); }
   }
   .open-btn::before {
     content: ''; position: absolute; top: 0; left: -100%;
@@ -368,7 +358,7 @@
   }
   .open-btn:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 18px 60px rgba(212,175,55,0.75), inset 0 1px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 18px 60px rgba(255,215,0,0.85), inset 0 1px 0 rgba(255,255,255,0.6);
   }
   .open-btn:active { transform: translateY(-1px) scale(0.98); }
 
@@ -434,7 +424,7 @@
   .hero-event {
     min-height: 100vh;
     display: flex; align-items: center;
-    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(212,175,55,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep) 0%, var(--maroon-dark) 50%, var(--maroon-deep) 100%);
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255,215,0,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep) 0%, var(--maroon-dark) 50%, var(--maroon-deep) 100%);
     position: relative;
     padding-top: 80px;
   }
@@ -458,7 +448,7 @@
   }
   .cd-box {
     padding: 18px 6px;
-    background: linear-gradient(160deg, rgba(212,175,55,0.09), rgba(212,175,55,0.02));
+    background: linear-gradient(160deg, rgba(255,215,0,0.09), rgba(255,215,0,0.02));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
@@ -469,7 +459,7 @@
   }
   .cd-box::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.7), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.7), transparent);
   }
   .cd-box span {
     display: block;
@@ -478,7 +468,7 @@
     font-weight: 700; color: var(--gold-light);
     line-height: 1; margin-bottom: 6px;
     transition: transform 0.2s;
-    text-shadow: 0 0 20px rgba(212,175,55,0.35);
+    text-shadow: 0 0 20px rgba(255,215,0,0.35);
   }
   .cd-box span.tick { animation: tick 0.5s ease; }
   @keyframes tick {
@@ -492,7 +482,7 @@
   }
 
   .glass-card {
-    background: linear-gradient(160deg, rgba(212,175,55,0.08), rgba(212,175,55,0.015));
+    background: linear-gradient(160deg, rgba(255,215,0,0.08), rgba(255,215,0,0.015));
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     border: 1px solid var(--glass-border);
@@ -505,13 +495,13 @@
   }
   .glass-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.8), transparent);
   }
   .glass-card::after {
     content: '';
     position: absolute; bottom: -50%; left: -50%;
     width: 200%; height: 200%;
-    background: radial-gradient(circle, rgba(212,175,55,0.08), transparent 40%);
+    background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 40%);
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
@@ -519,13 +509,13 @@
   .glass-card:hover::after { opacity: 1; }
   .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 32px 95px rgba(0,0,0,0.65), 0 0 50px rgba(212,175,55,0.12), inset 0 1px 0 rgba(255,255,255,0.09);
+    box-shadow: 0 32px 95px rgba(0,0,0,0.65), 0 0 50px rgba(255,215,0,0.15), inset 0 1px 0 rgba(255,255,255,0.09);
   }
   .event-card { max-width: 440px; margin: 0 auto; text-align: left; }
   .event-row {
     display: flex; gap: 16px; align-items: flex-start;
     padding: 16px 0;
-    border-bottom: 1px dashed rgba(212,175,55,0.15);
+    border-bottom: 1px dashed rgba(255,215,0,0.15);
     position: relative;
   }
   .event-row:last-of-type { border-bottom: none; }
@@ -533,9 +523,9 @@
     font-size: 1.15rem;
     width: 44px; height: 44px;
     display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.04));
+    background: linear-gradient(135deg, rgba(255,215,0,0.18), rgba(255,215,0,0.04));
     border-radius: 12px; flex-shrink: 0;
-    border: 1px solid rgba(212,175,55,0.22);
+    border: 1px solid rgba(255,215,0,0.22);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
   }
   .event-label {
@@ -604,7 +594,7 @@
   .gallery-section {
     background: linear-gradient(180deg, var(--maroon-deep), var(--maroon-dark));
     position: relative;
-    padding: 60px 22px; /* Dikurangi sedikit agar tidak terlalu banyak ruang kosong tanpa teks */
+    padding: 60px 22px;
   }
   .gallery-wrap {
     display: flex;
@@ -619,15 +609,14 @@
     width: 32%;
     max-width: 170px;
     aspect-ratio: 3/4;
-    background: #1a0206; 
-    border: 2px solid rgba(212,175,55,0.4);
+    background: var(--maroon-deep); 
+    border: 2px solid rgba(255,215,0,0.4);
     border-radius: 12px;
-    padding: 8px; /* Efek bingkai foto */
+    padding: 8px; 
     box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     cursor: pointer;
   }
-  /* Mengatur posisi bertumpuk (staggered) */
   .gallery-item:nth-child(1) {
     transform: translateX(15px) rotate(-6deg) translateY(15px);
     z-index: 1;
@@ -635,14 +624,13 @@
   .gallery-item:nth-child(2) {
     transform: translateY(-10px) scale(1.1);
     z-index: 3;
-    box-shadow: 0 20px 50px rgba(212,175,55,0.25);
+    box-shadow: 0 20px 50px rgba(255,215,0,0.25);
     border-color: var(--gold);
   }
   .gallery-item:nth-child(3) {
     transform: translateX(-15px) rotate(6deg) translateY(15px);
     z-index: 2;
   }
-  
   .gallery-item img {
     width: 100%;
     height: 100%;
@@ -651,32 +639,27 @@
     filter: brightness(0.85) contrast(1.1);
     transition: filter 0.3s, transform 0.5s;
   }
-  
-  /* Efek saat disentuh / di-hover */
   .gallery-item:hover {
     z-index: 10;
     transform: translateY(-15px) scale(1.15) rotate(0);
     border-color: var(--gold-bright);
-    box-shadow: 0 30px 60px rgba(212,175,55,0.4);
+    box-shadow: 0 30px 60px rgba(255,215,0,0.4);
   }
   .gallery-item:hover img {
     filter: brightness(1.1) contrast(1);
   }
 
-  /* Penyesuaian untuk HP (Layar Kecil) */
   @media (max-width: 480px) {
     .gallery-wrap { padding: 20px 0; gap: 5px; }
     .gallery-item { width: 30%; padding: 5px; border-width: 1px; }
     .gallery-item:nth-child(1) { transform: translateX(10px) rotate(-8deg) translateY(10px); }
     .gallery-item:nth-child(2) { transform: translateY(-5px) scale(1.05); }
     .gallery-item:nth-child(3) { transform: translateX(-10px) rotate(8deg) translateY(10px); }
-    .gallery-item:hover {
-      transform: translateY(-10px) scale(1.15) rotate(0);
-    }
+    .gallery-item:hover { transform: translateY(-10px) scale(1.15) rotate(0); }
   }
 
   .wishes {
-    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(212,175,55,0.05), transparent 60%), linear-gradient(180deg, var(--maroon-dark), var(--maroon-deep));
+    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(255,215,0,0.05), transparent 60%), linear-gradient(180deg, var(--maroon-dark), var(--maroon-deep));
     position: relative;
   }
   .wish-form {
@@ -689,7 +672,7 @@
     background: rgba(255,255,255,0.03);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212,175,55,0.25);
+    border: 1px solid rgba(255,215,0,0.25);
     border-radius: 12px; color: var(--cream);
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem; resize: vertical;
@@ -697,8 +680,8 @@
   }
   .wish-form input:focus, .wish-form textarea:focus {
     outline: none; border-color: var(--gold);
-    background: rgba(212,175,55,0.06);
-    box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+    background: rgba(255,215,0,0.06);
+    box-shadow: 0 0 0 3px rgba(255,215,0,0.15);
   }
   .wish-form input::placeholder, .wish-form textarea::placeholder {
     color: var(--text-muted); font-style: italic;
@@ -708,11 +691,11 @@
     background: linear-gradient(135deg, var(--gold-bright), var(--gold), var(--gold-deep));
     color: var(--maroon-deep); border: none; border-radius: 999px;
     font-family: 'Jost', sans-serif;
-    font-size: 0.76rem; font-weight: 600;
+    font-size: 0.76rem; font-weight: 700;
     letter-spacing: 0.2em; text-transform: uppercase;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 10px 28px rgba(212,175,55,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    box-shadow: 0 10px 28px rgba(255,215,0,0.35), inset 0 1px 0 rgba(255,255,255,0.45);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -720,7 +703,7 @@
   }
   .wish-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 14px 40px rgba(212,175,55,0.55), inset 0 1px 0 rgba(255,255,255,0.4);
+    box-shadow: 0 14px 40px rgba(255,215,0,0.55), inset 0 1px 0 rgba(255,255,255,0.5);
   }
   .wish-list {
     max-width: 440px; margin: 36px auto 0;
@@ -729,10 +712,10 @@
     text-align: left; padding-right: 6px;
   }
   .wish-list::-webkit-scrollbar { width: 3px; }
-  .wish-list::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.5); border-radius: 3px; }
+  .wish-list::-webkit-scrollbar-thumb { background: rgba(255,215,0,0.5); border-radius: 3px; }
   .wish-item {
     padding: 14px 18px;
-    background: rgba(212,175,55,0.05);
+    background: rgba(255,215,0,0.05);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-left: 2px solid var(--gold);
@@ -758,18 +741,18 @@
   .closing {
     padding: 90px 22px 120px;
     text-align: center;
-    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,175,55,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep), #050001);
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255,215,0,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep), #0a0002);
     position: relative;
   }
   .closing-mark {
     font-size: 2.2rem; color: var(--gold);
     margin-bottom: 24px; display: inline-block;
-    text-shadow: 0 0 25px rgba(212,175,55,0.7);
+    text-shadow: 0 0 25px rgba(255,215,0,0.7);
     animation: glowPulse 3s ease-in-out infinite;
   }
   @keyframes glowPulse {
-    0%, 100% { text-shadow: 0 0 25px rgba(212,175,55,0.7); transform: scale(1); }
-    50%      { text-shadow: 0 0 40px rgba(212,175,55,1); transform: scale(1.05); }
+    0%, 100% { text-shadow: 0 0 25px rgba(255,215,0,0.7); transform: scale(1); }
+    50%      { text-shadow: 0 0 40px rgba(255,215,0,1); transform: scale(1.05); }
   }
   .closing-text {
     font-family: 'Cormorant Garamond', serif;
@@ -826,10 +809,10 @@
   .music-toggle {
     position: fixed; bottom: 20px; right: 20px;
     width: 48px; height: 48px; border-radius: 50%;
-    background: linear-gradient(135deg, rgba(212,175,55,0.22), rgba(212,175,55,0.08));
+    background: linear-gradient(135deg, rgba(255,215,0,0.22), rgba(255,215,0,0.08));
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(212,175,55,0.45);
+    border: 1px solid rgba(255,215,0,0.45);
     color: var(--gold-light);
     display: flex; align-items: center; justify-content: center;
     cursor: pointer; z-index: 60;
@@ -839,7 +822,7 @@
   }
   .music-toggle.show { opacity: 1; pointer-events: auto; }
   .music-toggle:hover {
-    background: linear-gradient(135deg, rgba(212,175,55,0.4), rgba(212,175,55,0.15));
+    background: linear-gradient(135deg, rgba(255,215,0,0.4), rgba(255,215,0,0.15));
     transform: scale(1.1);
   }
   .music-toggle.playing svg { animation: spin 3s linear infinite; }
@@ -901,10 +884,10 @@
 
     <div class="photo-wrapper reveal" id="photoWrapper">
       <img class="cover-photo"
-           src="Tekla.jpeg"
+           src="Tekla1.png"
            alt="Foto Margaretha Tekla Fernandes"
            loading="eager"
-           onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect width=%22200%22 height=%22200%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22105%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>Foto belum diisi</text></svg>'">
+           onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>Foto belum diisi</text></svg>'">
     </div>
 
     <h1 class="cover-title reveal" data-name>Margaretha Tekla Fernandes</h1>
@@ -999,13 +982,13 @@
     <div class="container">
       <div class="gallery-wrap reveal">
         <div class="gallery-item">
-          <img src="1.jpeg" alt="Foto Wisuda 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>1.jpeg</text></svg>'">
+          <img src="1.jpeg" alt="Foto Wisuda 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>1.jpeg</text></svg>'">
         </div>
         <div class="gallery-item">
-          <img src="2.jpeg" alt="Foto Wisuda 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>2.jpeg</text></svg>'">
+          <img src="2.jpeg" alt="Foto Wisuda 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>2.jpeg</text></svg>'">
         </div>
         <div class="gallery-item">
-          <img src="3.jpeg" alt="Foto Wisuda 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>3.jpeg</text></svg>'">
+          <img src="3.jpeg" alt="Foto Wisuda 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>3.jpeg</text></svg>'">
         </div>
       </div>
     </div>
@@ -1078,7 +1061,7 @@
     mapLink: '#',                                
     
     // Nomor WA
-    noWa: '628146496343', 
+    noWa: '6281238818729', 
     
     // Menggunakan file lokal 'lagu.mp3' agar pasti berputar
     musicUrl: 'lagu.mp3',
@@ -1211,6 +1194,7 @@
   function openInvitation(ev) {
     if (ev && ev.currentTarget) sparkleBurst(ev.currentTarget);
 
+    // 1. PUTAR LAGU TEPAT SAAT INI (Tanpa setTimeout agar tidak diblokir browser)
     if (musicAvailable && audio) {
       if (musicToggle) musicToggle.classList.add('show');
       audio.volume = 0;
@@ -1226,6 +1210,7 @@
       });
     }
 
+    // 2. BARU JALANKAN ANIMASI (Dengan jeda 250ms agar transisi halus)
     setTimeout(function () {
       if (cover) cover.classList.add('opened');
       if (mainEl) mainEl.classList.add('visible');
