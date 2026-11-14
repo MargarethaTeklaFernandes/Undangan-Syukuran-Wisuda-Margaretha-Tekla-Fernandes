@@ -828,7 +828,7 @@
     <p class="eyebrow reveal">Undangan Syukuran Wisuda</p>
 
     <div class="photo-wrapper reveal" id="photoWrapper">
-      <!-- GANTI src INI DENGAN FOTO MARGARETHA. CONTOH: src="assets/foto.jpg" -->
+      <!-- GANTI src INI DENGAN FOTO MARGARETHA. CONTOH: src="Tekla.jpeg" -->
       <img class="cover-photo"
            src="Tekla.jpeg"
            alt="Foto Margaretha Tekla Fernandes"
@@ -884,24 +884,24 @@
           <div class="event-icon">📅</div>
           <div>
             <p class="event-label">Hari / Tanggal</p>
-            <p class="event-value" data-date>Minggu, 20 Desember 2026</p>
+            <p class="event-value" data-date>Selasa, 17 November 2026</p>
           </div>
         </div>
         <div class="event-row">
           <div class="event-icon">⏰</div>
           <div>
             <p class="event-label">Waktu</p>
-            <p class="event-value" data-time>09.00 WIB — Selesai</p>
+            <p class="event-value" data-time>19.00 WIB — Selesai</p>
           </div>
         </div>
         <div class="event-row">
           <div class="event-icon">📍</div>
           <div>
             <p class="event-label">Lokasi</p>
-            <p class="event-value" data-location>Kediaman Keluarga<br>Jl. Contoh No. 123, Kota</p>
+            <p class="event-value" data-location>Kediaman Keluarga<br>(Isi alamat di sini)</p>
           </div>
         </div>
-        <a class="map-btn" data-map-link href="https://maps.google.com" target="_blank" rel="noopener">
+        <a class="map-btn" data-map-link href="#" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Lihat Lokasi
         </a>
@@ -963,6 +963,7 @@
     <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
   </svg>
 </button>
+<!-- Bagian lagu: Link ini menggunakan lagu Canon in D -->
 <audio id="bgMusic" loop preload="auto">
   <source src="https://ia801504.us.archive.org/22/items/PachelbelCanonInD_201512/CanonInD.mp3" type="audio/mpeg">
 </audio>
@@ -979,11 +980,11 @@
   var CONFIG = {
     nama: 'Margaretha Tekla Fernandes',
     gelar: 'S.Kom.',
-    eventDate: '2026-11-17T09:00:00+07:00',     // ✅ Tanggal 17 Nov 2026, jam 09.00 WIB
+    eventDate: '2026-11-17T19:00:00+07:00',     // ✅ Diubah ke jam 19.00 (7 Malam)
     tanggalTeks: 'Selasa, 17 November 2026',     // ✅ Teks tanggal
-    waktuTeks: '09.00 WIB — Selesai',
-    lokasiTeks: 'Kediaman Keluarga<br>Jl. Contoh No. 123, Kota', // GANTI ALAMAT
-    mapLink: 'https://maps.google.com/?q=-6.200000,106.816666',  // GANTI LINK MAPS
+    waktuTeks: '19.00 WIB — Selesai',            // ✅ Teks waktu
+    lokasiTeks: 'Kediaman Keluarga<br>(Isi alamat di sini)', // ✍️ KETIK ALAMAT DI SINI
+    mapLink: '#',                                // ✍️ GANTI DENGAN LINK MAPS
     musicUrl: 'https://ia801504.us.archive.org/22/items/PachelbelCanonInD_201512/CanonInD.mp3',
     musicFadeMs: 3000
   };
@@ -1124,6 +1125,7 @@
       document.body.classList.add('opened');
       window.scrollTo(0, 0);
 
+      // Lagu otomatis berputar setelah tombol diklik
       if (musicAvailable && audio) {
         if (musicToggle) musicToggle.classList.add('show');
         audio.volume = 0;
@@ -1247,7 +1249,7 @@
 
   var wishForm = byId('wishForm');
   var wishList = byId('wishList');
-  var STORAGE_KEY = 'wishes_margaretha_wisuda_v4';
+  var STORAGE_KEY = 'wishes_margaretha_wisuda_v5';
 
   function getWishes() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
