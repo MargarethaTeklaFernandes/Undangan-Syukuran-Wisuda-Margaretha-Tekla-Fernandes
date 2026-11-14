@@ -608,8 +608,41 @@
     font-weight: 500;
   }
 
+  /* ===== GALLERY ===== */
+  .gallery-section {
+    background: linear-gradient(180deg, var(--maroon-deep), var(--maroon-dark));
+    position: relative;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 600px;
+    margin: 30px auto 0;
+  }
+  .gallery-grid img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s;
+    cursor: pointer;
+  }
+  .gallery-grid img:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(212,175,55,0.2);
+    z-index: 2;
+    position: relative;
+  }
+  @media (max-width: 480px) {
+    .gallery-grid { gap: 8px; }
+  }
+
+  /* ===== WISHES ===== */
   .wishes {
-    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(212,175,55,0.05), transparent 60%), linear-gradient(180deg, var(--maroon-deep), var(--maroon-dark));
+    background: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(212,175,55,0.05), transparent 60%), linear-gradient(180deg, var(--maroon-dark), var(--maroon-deep));
     position: relative;
   }
   .wish-form {
@@ -646,6 +679,10 @@
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 10px 28px rgba(212,175,55,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
   .wish-form button:hover {
     transform: translateY(-2px);
@@ -684,10 +721,11 @@
     font-style: italic; padding: 20px; font-size: 0.9rem;
   }
 
+  /* ===== CLOSING ===== */
   .closing {
     padding: 90px 22px 120px;
     text-align: center;
-    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,175,55,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-dark), var(--maroon-deep));
+    background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,175,55,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep), #050001);
     position: relative;
   }
   .closing-mark {
@@ -803,6 +841,7 @@
 
 <nav class="dot-nav" id="dotNav" aria-label="Navigasi section">
   <a href="#sec-hero" data-label="Acara"></a>
+  <a href="#sec-gallery" data-label="Galeri"></a>
   <a href="#sec-wishes" data-label="Doa"></a>
   <a href="#sec-closing" data-label="Penutup"></a>
 </nav>
@@ -828,7 +867,6 @@
     <p class="eyebrow reveal">Undangan Syukuran Wisuda</p>
 
     <div class="photo-wrapper reveal" id="photoWrapper">
-      <!-- GANTI src INI DENGAN FOTO MARGARETHA. CONTOH: src="Tekla.jpeg" -->
       <img class="cover-photo"
            src="Tekla.jpeg"
            alt="Foto Margaretha Tekla Fernandes"
@@ -846,7 +884,6 @@
       </svg>
     </div>
 
-    <!-- BAGIAN NAMA TAMU -->
     <div class="guest-pill reveal">
       <p class="guest-label">Kepada Yth. Bapak/Ibu/Saudara/i</p>
       <p class="guest-name" id="guestName">Tamu Undangan</p>
@@ -862,6 +899,7 @@
 
 <main class="main" id="main">
 
+  <!-- SECTION 1: ACARA -->
   <section class="section hero-event" id="sec-hero">
     <div class="container">
       <p class="section-eyebrow reveal">Syukuran Wisuda</p>
@@ -923,6 +961,22 @@
     </div>
   </section>
 
+  <!-- SECTION 2: GALERI (3 FOTO) -->
+  <section class="section gallery-section" id="sec-gallery">
+    <div class="container">
+      <p class="section-eyebrow reveal">Momen Bahagia</p>
+      <h2 class="section-title" data-word-reveal>Galeri Kenangan</h2>
+      
+      <div class="gallery-grid reveal">
+        <!-- PASTIKAN KAMU SUDAH UPLOAD FOTO INI KE GITHUB DENGAN NAMA YANG SAMA -->
+        <img src="foto1.jpg" alt="Foto Wisuda 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>foto1.jpg</text></svg>'">
+        <img src="foto2.jpg" alt="Foto Wisuda 2" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>foto2.jpg</text></svg>'">
+        <img src="foto3.jpg" alt="Foto Wisuda 3" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231f0308%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%237d6f55%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>foto3.jpg</text></svg>'">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: DOA & UCAPAN -->
   <section class="section wishes" id="sec-wishes">
     <div class="container">
       <p class="section-eyebrow reveal">Doa &amp; Ucapan</p>
@@ -931,13 +985,18 @@
       <form class="wish-form reveal" id="wishForm">
         <input type="text" id="wishName" placeholder="Nama kamu" required maxlength="60" autocomplete="name">
         <textarea id="wishMessage" placeholder="Tuliskan doa &amp; ucapan terbaik..." required maxlength="300" rows="4"></textarea>
-        <button type="submit">Kirimkan Doa</button>
+        <!-- Ada icon WA di tombolnya -->
+        <button type="submit">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          Kirim via WhatsApp
+        </button>
       </form>
 
       <div class="wish-list reveal" id="wishList"></div>
     </div>
   </section>
 
+  <!-- SECTION 4: PENUTUP -->
   <footer class="closing" id="sec-closing">
     <div class="container">
       <span class="closing-mark reveal">✝</span>
@@ -963,9 +1022,10 @@
     <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
   </svg>
 </button>
-<!-- Bagian lagu: Link ini menggunakan lagu Canon in D -->
+
+<!-- LAGU DIGANTI KE LINK YANG LEBIH STABIL (Pixabay) -->
 <audio id="bgMusic" loop preload="auto">
-  <source src="https://ia801504.us.archive.org/22/items/PachelbelCanonInD_201512/CanonInD.mp3" type="audio/mpeg">
+  <source src="audio.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -980,12 +1040,16 @@
   var CONFIG = {
     nama: 'Margaretha Tekla Fernandes',
     gelar: 'S.Kom.',
-    eventDate: '2026-11-17T19:00:00+07:00',     // ✅ Diubah ke jam 19.00 (7 Malam)
-    tanggalTeks: 'Selasa, 17 November 2026',     // ✅ Teks tanggal
-    waktuTeks: '19.00 WIB — Selesai',            // ✅ Teks waktu
+    eventDate: '2026-11-17T19:00:00+07:00',     
+    tanggalTeks: 'Selasa, 17 November 2026',     
+    waktuTeks: '19.00 WIB — Selesai',            
     lokasiTeks: 'Kediaman Keluarga<br>(Isi alamat di sini)', // ✍️ KETIK ALAMAT DI SINI
     mapLink: '#',                                // ✍️ GANTI DENGAN LINK MAPS
-    musicUrl: 'https://ia801504.us.archive.org/22/items/PachelbelCanonInD_201512/CanonInD.mp3',
+    
+    // ✍️ GANTI NOMOR WA KAMU DI SINI (Awali 62, tanpa + atau spasi)
+    noWa: '628146496343', 
+    
+    musicUrl: 'https://cdn.pixabay.com/download/audio/2022/10/25/audio_946bc9a2f2.mp3?filename=canon-in-d-major-11620.mp3',
     musicFadeMs: 3000
   };
   /* ============================================================ */
@@ -1125,7 +1189,7 @@
       document.body.classList.add('opened');
       window.scrollTo(0, 0);
 
-      // Lagu otomatis berputar setelah tombol diklik
+      // Memutar Lagu
       if (musicAvailable && audio) {
         if (musicToggle) musicToggle.classList.add('show');
         audio.volume = 0;
@@ -1135,7 +1199,9 @@
             musicToggle.classList.remove('paused');
           }
           fadeInAudio(0.6, CONFIG.musicFadeMs);
-        }).catch(function () {});
+        }).catch(function (err) {
+          console.log("Lagu gagal diputar otomatis oleh browser: ", err);
+        });
       }
 
       document.querySelectorAll('.hero-event .reveal').forEach(function (el, i) {
@@ -1206,7 +1272,7 @@
     if (scrollHint) scrollHint.style.opacity = h.scrollTop > 120 ? '0' : '';
 
     if (dotNav) {
-      var sections = ['sec-hero', 'sec-wishes', 'sec-closing'];
+      var sections = ['sec-hero', 'sec-gallery', 'sec-wishes', 'sec-closing'];
       var activeIdx = 0;
       sections.forEach(function (id, i) {
         var s = document.getElementById(id);
@@ -1247,14 +1313,16 @@
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
+  // === WISHES & KIRIM KE WA ===
   var wishForm = byId('wishForm');
   var wishList = byId('wishList');
-  var STORAGE_KEY = 'wishes_margaretha_wisuda_v5';
+  var STORAGE_KEY = 'wishes_margaretha_wisuda_v6';
 
   function getWishes() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
     catch (e) { return []; }
   }
+  
   function renderWishes(wishes) {
     if (!wishList) return;
     if (!wishes.length) {
@@ -1274,19 +1342,32 @@
       wishList.appendChild(div);
     });
   }
+  
   if (wishForm) {
     wishForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var name = byId('wishName').value.trim();
       var message = byId('wishMessage').value.trim();
       if (!name || !message) return;
+
+      // 1. Simpan ke tampilan web (opsional)
       var wishes = getWishes();
       wishes.push({ name: name, message: message, time: Date.now() });
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes)); } catch (e) {}
-      wishForm.reset();
       renderWishes(wishes);
+
+      // 2. Kirim ke WhatsApp Pemilik Acara
+      var waNumber = CONFIG.noWa; 
+      var text = "Halo, saya *" + name + "* ingin mengirimkan doa & ucapan untuk wisuda:\n\n\"" + message + "\"";
+      var waUrl = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(text);
+      
+      // Buka WA di tab baru
+      window.open(waUrl, '_blank');
+      
+      wishForm.reset();
     });
   }
+  
   renderWishes(getWishes());
 
   setupWordReveal();
