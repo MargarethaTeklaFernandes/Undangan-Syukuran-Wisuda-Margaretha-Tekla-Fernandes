@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#1a0004" />
-<meta name="description" content="Undangan Syukuran Wisuda Margaretha Tekla Fernandes, S.Kom" />
+<meta name="description" content="Undangan Syukuran Wisuda Margaretha Tekla Fernandez, S.Kom" />
 <title>Undangan Syukuran Wisuda — Margaretha Tekla Fernandes, S.Kom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -235,7 +235,7 @@
     opacity: 0.6;
   }
 
-  /* PERBAIKAN FOTO: Bentuk Kubah (Arch) */
+  /* Foto Utama Bentuk Kubah (Arch) */
   .photo-wrapper {
     position: relative;
     width: clamp(200px, 65vw, 260px); 
@@ -243,15 +243,12 @@
     margin: 0 auto 26px;
     will-change: transform;
     animation: floatPhoto 6s ease-in-out infinite;
-    border-radius: 150px 150px 20px 20px; /* Membuat bentuk kubah */
+    border-radius: 150px 150px 20px 20px;
     padding: 5px;
     background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
   }
-  /* Sembunyikan lingkaran animasi lama agar tidak dobel */
-  .photo-wrapper::before, .photo-wrapper::after {
-    display: none;
-  }
+  .photo-wrapper::before, .photo-wrapper::after { display: none; }
   @keyframes floatPhoto {
     0%, 100% { transform: translateY(0); }
     50%      { transform: translateY(-8px); }
@@ -260,7 +257,7 @@
   .cover-photo {
     position: relative; z-index: 1;
     width: 100%; height: 100%;
-    border-radius: 144px 144px 16px 16px; /* Inner arch */
+    border-radius: 144px 144px 16px 16px;
     object-fit: cover; 
     object-position: center top;
     background-color: #ffffff; 
@@ -596,66 +593,94 @@
     position: relative;
     padding: 60px 22px;
   }
+  
   .gallery-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto;
-    padding: 30px 10px;
-    perspective: 1000px;
-  }
-  .gallery-item {
     position: relative;
-    width: 32%;
-    max-width: 170px;
-    aspect-ratio: 3/4;
+    width: 100%;
+    max-width: 340px; 
+    height: 420px;    
+    margin: 20px auto;
+  }
+
+  .gallery-item {
+    position: absolute;
     background: var(--maroon-deep); 
-    border: 2px solid rgba(255,215,0,0.4);
+    border: 3px solid rgba(255,215,0,0.5);
     border-radius: 12px;
-    padding: 8px; 
+    padding: 6px; 
     box-shadow: 0 15px 35px rgba(0,0,0,0.6);
     transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
     cursor: pointer;
+    animation: floatCollage 6s ease-in-out infinite;
   }
-  .gallery-item:nth-child(1) {
-    transform: translateX(15px) rotate(-6deg) translateY(15px);
-    z-index: 1;
-  }
-  .gallery-item:nth-child(2) {
-    transform: translateY(-10px) scale(1.1);
-    z-index: 3;
-    box-shadow: 0 20px 50px rgba(255,215,0,0.25);
-    border-color: var(--gold);
-  }
-  .gallery-item:nth-child(3) {
-    transform: translateX(-15px) rotate(6deg) translateY(15px);
-    z-index: 2;
-  }
+
   .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
-    filter: brightness(0.85) contrast(1.1);
-    transition: filter 0.3s, transform 0.5s;
+    filter: brightness(0.9) contrast(1.1);
+    transition: filter 0.3s;
+    display: block;
   }
+
+  /* FOTO 1: Kiri Atas, Ukuran Sedang */
+  .gallery-item:nth-child(1) {
+    --rot: -6deg;
+    width: 55%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    animation-delay: 0s;
+  }
+
+  /* FOTO 2: Kanan Tengah, Ukuran Paling Besar */
+  .gallery-item:nth-child(2) {
+    --rot: 4deg;
+    width: 68%;
+    height: 62%;
+    top: 15%;
+    right: 0;
+    z-index: 3;
+    border-color: var(--gold);
+    box-shadow: 0 20px 50px rgba(255,215,0,0.3);
+    animation-delay: -2s;
+  }
+
+  /* FOTO 3: Kiri Bawah, Diperbesar & Diturunkan */
+  .gallery-item:nth-child(3) {
+    --rot: -3deg;
+    width: 58%;     /* Diperbesar dari 50% */
+    height: 52%;    /* Diperbesar dari 45% */
+    bottom: -25px;  /* Diturunkan sedikit agar lebih dinamis */
+    left: 2%;       
+    z-index: 2;
+    animation-delay: -4s;
+  }
+
+  /* Keyframes Animasi Float */
+  @keyframes floatCollage {
+    0%, 100% { transform: translateY(0) rotate(var(--rot)); }
+    50%      { transform: translateY(-10px) rotate(var(--rot)); }
+  }
+
+  /* Efek saat disentuh / di-hover */
   .gallery-item:hover {
     z-index: 10;
-    transform: translateY(-15px) scale(1.15) rotate(0);
+    transform: scale(1.1) rotate(0); 
     border-color: var(--gold-bright);
-    box-shadow: 0 30px 60px rgba(255,215,0,0.4);
+    box-shadow: 0 30px 60px rgba(255,215,0,0.5);
+    animation-play-state: paused; 
   }
   .gallery-item:hover img {
     filter: brightness(1.1) contrast(1);
   }
 
-  @media (max-width: 480px) {
-    .gallery-wrap { padding: 20px 0; gap: 5px; }
-    .gallery-item { width: 30%; padding: 5px; border-width: 1px; }
-    .gallery-item:nth-child(1) { transform: translateX(10px) rotate(-8deg) translateY(10px); }
-    .gallery-item:nth-child(2) { transform: translateY(-5px) scale(1.05); }
-    .gallery-item:nth-child(3) { transform: translateX(-10px) rotate(8deg) translateY(10px); }
-    .gallery-item:hover { transform: translateY(-10px) scale(1.15) rotate(0); }
+  /* Penyesuaian untuk HP layar sangat kecil */
+  @media (max-width: 380px) {
+    .gallery-wrap { height: 380px; }
+    .gallery-item { padding: 4px; border-width: 2px; }
   }
 
   .wishes {
@@ -952,7 +977,7 @@
           <div class="event-icon">📍</div>
           <div>
             <p class="event-label">Lokasi</p>
-            <p class="event-value" data-location>Kediaman Keluarga<br>Matani</p>
+            <p class="event-value" data-location>Kediaman Keluarga<br>(Isi alamat di sini)</p>
           </div>
         </div>
         <a class="map-btn" data-map-link href="#" target="_blank" rel="noopener">
@@ -980,7 +1005,8 @@
   <!-- SECTION 2: GALERI (MODERN COLLAGE) -->
   <section class="section gallery-section" id="sec-gallery">
     <div class="container">
-      <div class="gallery-wrap reveal">
+      <!-- Class 'reveal' sengaja dihilangkan agar foto tidak tersembunyi -->
+      <div class="gallery-wrap">
         <div class="gallery-item">
           <img src="1.jpeg" alt="Foto Wisuda 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>1.jpeg</text></svg>'">
         </div>
@@ -1057,7 +1083,7 @@
     eventDate: '2026-11-17T19:00:00+07:00',     
     tanggalTeks: 'Selasa, 17 November 2026',     
     waktuTeks: '19.00 WITA — Selesai',            
-    lokasiTeks: 'Kediaman Keluarga<br>(Matani)', 
+    lokasiTeks: 'Kediaman Keluarga<br>(Isi alamat di sini)', 
     mapLink: '#',                                
     
     // Nomor WA
