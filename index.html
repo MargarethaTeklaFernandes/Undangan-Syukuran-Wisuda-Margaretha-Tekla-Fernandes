@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#1a0004" />
 <meta name="description" content="Undangan Syukuran Wisuda Margaretha Tekla Fernandez, S.Kom" />
-<title>Undangan Syukuran Wisuda — Margaretha Tekla Fernandes, S.Kom</title>
+<title>Undangan Syukuran Wisuda — Margaretha Tekla Fernandez, S.Kom</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +20,7 @@
     --gold-bright: #FFF59D;
     --gold-deep: #C59B00;
     --gold-light: #FFEAA7;
+    --pink-soft: #FFB6C1;  /* Aksen pink untuk bunga */
     --cream: #FFFFFF;
     --text-soft: #E6D3B3;
     --text-muted: #9E8A75;
@@ -269,28 +270,24 @@
     0%, 100% { box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 0 30px rgba(255,215,0,0.4); }
     50%      { box-shadow: inset 0 0 20px rgba(0,0,0,0.5), 0 0 60px rgba(255,215,0,0.7); }
   }
-
-  .cover-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.7rem, 5.8vw, 2.3rem);
-    font-weight: 700; line-height: 1.15;
-    background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold-bright) 20%, #fff8e7 35%, var(--gold-bright) 55%, var(--gold) 75%, var(--gold-bright) 100%);
-    background-size: 250% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 6s linear infinite;
-    margin-bottom: 6px;
-    letter-spacing: 0.01em;
-  }
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.85rem, 4.4vw, 1.55rem); /* diperkecil + responsif */
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;               /* paksa 1 baris */
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 6px;
+  background: linear-gradient(90deg, var(--gold-deep) 0%, var(--gold-bright) 20%, #fff8e7 35%, var(--gold-bright) 55%, var(--gold) 75%, var(--gold-bright) 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s linear infinite;
+  letter-spacing: 0;                 /* hilangkan spasi ekstra */
+}
   @keyframes shimmer { to { background-position: 250% center; } }
-
-  .cover-degree {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.75rem; letter-spacing: 0.38em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 5px; font-weight: 500;
-  }
 
   .ornament {
     display: flex; align-items: center; justify-content: center;
@@ -651,9 +648,9 @@
   /* FOTO 3: Kiri Bawah, Diperbesar & Diturunkan */
   .gallery-item:nth-child(3) {
     --rot: -3deg;
-    width: 58%;     /* Diperbesar dari 50% */
-    height: 52%;    /* Diperbesar dari 45% */
-    bottom: -25px;  /* Diturunkan sedikit agar lebih dinamis */
+    width: 58%;     
+    height: 52%;    
+    bottom: -25px;  
     left: 2%;       
     z-index: 2;
     animation-delay: -4s;
@@ -763,44 +760,24 @@
     font-style: italic; padding: 20px; font-size: 0.9rem;
   }
 
+  /* ===== CLOSING ===== */
   .closing {
     padding: 90px 22px 120px;
     text-align: center;
     background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255,215,0,0.06), transparent 60%), linear-gradient(180deg, var(--maroon-deep), #0a0002);
     position: relative;
   }
-  .closing-mark {
-    font-size: 2.2rem; color: var(--gold);
-    margin-bottom: 24px; display: inline-block;
-    text-shadow: 0 0 25px rgba(255,215,0,0.7);
-    animation: glowPulse 3s ease-in-out infinite;
-  }
-  @keyframes glowPulse {
-    0%, 100% { text-shadow: 0 0 25px rgba(255,215,0,0.7); transform: scale(1); }
-    50%      { text-shadow: 0 0 40px rgba(255,215,0,1); transform: scale(1.05); }
-  }
+  
   .closing-text {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1rem, 2.8vw, 1.15rem);
     color: var(--text-soft);
-    max-width: 480px; margin: 0 auto 40px;
+    max-width: 480px; margin: 0 auto 30px;
     line-height: 1.85;
     font-style: italic;
     font-weight: 300;
   }
-  .closing-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 5vw, 2.1rem);
-    font-weight: 600; color: var(--gold-light);
-    margin-bottom: 8px; letter-spacing: 0.03em;
-  }
-  .closing-sub {
-    font-family: 'Jost', sans-serif;
-    font-size: 0.7rem; letter-spacing: 0.32em;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 50px;
-    font-weight: 500;
-  }
+
   .closing-footer {
     font-family: 'Jost', sans-serif;
     font-size: 0.6rem; letter-spacing: 0.24em;
@@ -910,13 +887,13 @@
     <div class="photo-wrapper reveal" id="photoWrapper">
       <img class="cover-photo"
            src="Tekla1.png"
-           alt="Foto Margaretha Tekla Fernandes"
+           alt="Foto Margaretha Tekla Fernandez"
            loading="eager"
            onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>Foto belum diisi</text></svg>'">
     </div>
 
-    <h1 class="cover-title reveal" data-name>Margaretha Tekla Fernandes</h1>
-    <p class="cover-degree reveal" data-degree>S.Kom.</p>
+    <!-- Nama dan Gelar digabung -->
+    <h1 class="cover-title reveal" data-name>Margaretha Tekla Fernandez, S.Kom.</h1>
 
     <div class="ornament reveal">
       <svg viewBox="0 0 240 20" fill="none" stroke="currentColor" stroke-width="1">
@@ -977,7 +954,8 @@
           <div class="event-icon">📍</div>
           <div>
             <p class="event-label">Lokasi</p>
-            <p class="event-value" data-location>Kediaman Keluarga<br>(Isi alamat di sini)</p>
+            <!-- Alamat baru -->
+            <p class="event-value" data-location>Kediaman Keluarga<br>Jln. Matani Raya Gang SABAAT 1 (Rumah Pagar Putih)</p>
           </div>
         </div>
         <a class="map-btn" data-map-link href="#" target="_blank" rel="noopener">
@@ -988,11 +966,11 @@
 
       <div class="quote-block reveal">
         <span class="quote-mark">"</span>
+        <!-- Ayat Baru -->
         <p class="quote-text">
-          Bersyukurlah kepada TUHAN, sebab Ia baik!
-          Bahwasanya untuk selama-lamanya kasih setia-Nya.
+         Sebab itu janganlah kamu kuatir akan hari esok, karena hari esok mempunyai kesusahannya sendiri. Kesusahan sehari cukup sehari.
         </p>
-        <p class="quote-author">— Mazmur 107:1 —</p>
+        <p class="quote-author">— Matius 6:34 —</p>
       </div>
     </div>
 
@@ -1005,7 +983,6 @@
   <!-- SECTION 2: GALERI (MODERN COLLAGE) -->
   <section class="section gallery-section" id="sec-gallery">
     <div class="container">
-      <!-- Class 'reveal' sengaja dihilangkan agar foto tidak tersembunyi -->
       <div class="gallery-wrap">
         <div class="gallery-item">
           <img src="1.jpeg" alt="Foto Wisuda 1" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 300%22><rect width=%22200%22 height=%22300%22 fill=%22%231a0004%22/><text x=%22100%22 y=%22150%22 text-anchor=%22middle%22 fill=%22%239E8A75%22 font-family=%22sans-serif%22 font-size=%2212%22 font-style=%22italic%22>1.jpeg</text></svg>'">
@@ -1039,22 +1016,26 @@
     </div>
   </section>
 
-  <!-- SECTION 4: PENUTUP -->
+  <!-- SECTION 4: PENUTUP (DIPERBARUI) -->
   <footer class="closing" id="sec-closing">
     <div class="container">
-      <span class="closing-mark reveal">✝</span>
-      <p class="section-eyebrow reveal">Terima Kasih</p>
+   
       <p class="closing-text reveal">
         Merupakan suatu kebahagiaan dan kehormatan bagi kami
         apabila Bapak/Ibu/Saudara/i berkenan hadir.
       </p>
-      <h2 class="closing-title reveal" data-name>Margaretha Tekla Fernandes</h2>
-      <p class="closing-sub reveal" data-degree>S.Kom.</p>
-      <p class="closing-footer reveal">
-        <span class="bless">Tuhan Memberkati</span>
-        Dengan penuh cinta, keluarga<br>
-        © 2026
+      <p class="closing-text reveal">
+         Dengan penuh cinta<br>
+         keluarga
       </p>
+           
+      <p class="closing-footer reveal">
+        <span class="bless">See You</span>
+        <span class="bless">🌸🌺🌷</span>
+  
+      </p>
+
+     
     </div>
   </footer>
 
@@ -1078,18 +1059,17 @@
      ⚙️ KONFIGURASI — EDIT DI SINI
      ============================================================ */
   var CONFIG = {
-    nama: 'Margaretha Tekla Fernandes',
-    gelar: 'S.Kom.',
+    nama: 'Margaretha Tekla Fernandez, S.Kom.', // Nama dan Gelar digabung
+    gelar: '', // Dikosongkan karena sudah masuk ke nama
     eventDate: '2026-11-17T19:00:00+07:00',     
     tanggalTeks: 'Selasa, 17 November 2026',     
     waktuTeks: '19.00 WITA — Selesai',            
-    lokasiTeks: 'Kediaman Keluarga<br>(Isi alamat di sini)', 
-    mapLink: "https://www.google.com/maps?q=-10.1554033,123.6791433",                               
+    lokasiTeks: 'Kediaman Keluarga<br>Jln. Matani Raya Gang SABAAT 1 (Rumah Pagar Putih)', 
+    mapLink: "https://www.google.com/maps?q=-10.1554033,123.6791433",
     
     // Nomor WA
     noWa: '6281238818729', 
     
-    // Menggunakan file lokal 'lagu.mp3' agar pasti berputar
     musicUrl: 'lagu.mp3',
     musicFadeMs: 3000
   };
@@ -1108,7 +1088,7 @@
 
   // === Inject CONFIG ke semua elemen data-* ===
   $('[data-name]').forEach(function (el) { el.textContent = CONFIG.nama; });
-  $('[data-degree]').forEach(function (el) { el.textContent = CONFIG.gelar; });
+  // Karena gelar sudah digabung, elemen data-degree tidak diinjeksi lagi
   $('[data-date]').forEach(function (el) { el.innerHTML = CONFIG.tanggalTeks; });
   $('[data-time]').forEach(function (el) { el.innerHTML = CONFIG.waktuTeks; });
   $('[data-location]').forEach(function (el) { el.innerHTML = CONFIG.lokasiTeks; });
@@ -1220,7 +1200,6 @@
   function openInvitation(ev) {
     if (ev && ev.currentTarget) sparkleBurst(ev.currentTarget);
 
-    // 1. PUTAR LAGU TEPAT SAAT INI (Tanpa setTimeout agar tidak diblokir browser)
     if (musicAvailable && audio) {
       if (musicToggle) musicToggle.classList.add('show');
       audio.volume = 0;
@@ -1236,7 +1215,6 @@
       });
     }
 
-    // 2. BARU JALANKAN ANIMASI (Dengan jeda 250ms agar transisi halus)
     setTimeout(function () {
       if (cover) cover.classList.add('opened');
       if (mainEl) mainEl.classList.add('visible');
@@ -1356,7 +1334,7 @@
   // === WISHES & KIRIM KE WA ===
   var wishForm = byId('wishForm');
   var wishList = byId('wishList');
-  var STORAGE_KEY = 'wishes_margaretha_wisuda_v6';
+  var STORAGE_KEY = 'wishes_margaretha_wisuda_v7';
 
   function getWishes() {
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || []; }
@@ -1366,7 +1344,7 @@
   function renderWishes(wishes) {
     if (!wishList) return;
     if (!wishes.length) {
-      wishList.innerHTML = '<p class="wish-empty">Belum ada doa yang tersampaikan.<br>Jadilah yang pertama 💐</p>';
+      wishList.innerHTML = '<p class="wish-empty">Belum ada doa yang tersampaikan.<br>Jadilah yang pertama 🌸</p>';
       return;
     }
     wishList.innerHTML = '';
@@ -1390,13 +1368,11 @@
       var message = byId('wishMessage').value.trim();
       if (!name || !message) return;
 
-      // 1. Simpan ke tampilan web
       var wishes = getWishes();
       wishes.push({ name: name, message: message, time: Date.now() });
       try { localStorage.setItem(STORAGE_KEY, JSON.stringify(wishes)); } catch (e) {}
       renderWishes(wishes);
 
-      // 2. Kirim ke WhatsApp Pemilik Acara
       var waNumber = CONFIG.noWa; 
       var text = "Halo, saya *" + name + "* ingin mengirimkan doa & ucapan untuk wisuda:\n\n\"" + message + "\"";
       var waUrl = "https://wa.me/" + waNumber + "?text=" + encodeURIComponent(text);
